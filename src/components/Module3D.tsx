@@ -31,7 +31,7 @@ function ModuleGeometry() {
     <group>
       {/* Top panel (width × depth) */}
       <mesh
-        position={[0, height / 2 + panelThickness / 2, 0]}
+        position={[0, height / 2 - panelThickness / 2 , 0]}
         castShadow
         receiveShadow
       >
@@ -41,7 +41,7 @@ function ModuleGeometry() {
 
       {/* Bottom panel (width × depth) */}
       <mesh
-        position={[0, -height / 2 - panelThickness / 2, 0]}
+        position={[0, -height / 2 + panelThickness / 2, 0]}
         castShadow
         receiveShadow
       >
@@ -51,7 +51,7 @@ function ModuleGeometry() {
 
       {/* Front panel (width × height) */}
       <mesh
-        position={[0, 0, DEPTH / 2 + panelThickness / 2]}
+        position={[0, 0, DEPTH / 2 - panelThickness / 2]}
         castShadow
         receiveShadow
       >
@@ -61,7 +61,7 @@ function ModuleGeometry() {
 
       {/* Back panel (width × height) */}
       <mesh
-        position={[0, 0, -DEPTH / 2 - panelThickness / 2]}
+        position={[0, 0, -DEPTH / 2 + panelThickness / 2]}
         castShadow
         receiveShadow
       >
@@ -71,7 +71,7 @@ function ModuleGeometry() {
 
       {/* Left side panel (height × depth) */}
       <mesh
-        position={[-width / 2 - panelThickness / 2, 0, 0]}
+        position={[-width / 2 + panelThickness / 2, 0, 0]}
         castShadow
         receiveShadow
       >
@@ -81,7 +81,7 @@ function ModuleGeometry() {
 
       {/* Right side panel (height × depth) */}
       <mesh
-        position={[width / 2 + panelThickness / 2, 0, 0]}
+        position={[width / 2 - panelThickness / 2, 0, 0]}
         castShadow
         receiveShadow
       >
