@@ -1,0 +1,179 @@
+[
+  {
+    "partId": "PANEL-TOP-METAL",
+    "description": "Top Panel - Metal Finish",
+    "dimensions": {
+      "width": { "min": 100, "max": 2000 },
+      "height": { "min": 100, "max": 2000 },
+      "depth": 20
+    },
+    "finish": "metal",
+    "category": "panel"
+  },
+  {
+    "partId": "PANEL-TOP-WOOD",
+    "description": "Top Panel - Wood Finish",
+    "dimensions": {
+      "width": { "min": 100, "max": 2000 },
+      "height": { "min": 100, "max": 2000 },
+      "depth": 20
+    },
+    "finish": "wood",
+    "category": "panel"
+  },
+  {
+    "partId": "PANEL-BOTTOM-METAL",
+    "description": "Bottom Panel - Metal Finish",
+    "dimensions": {
+      "width": { "min": 100, "max": 2000 },
+      "height": { "min": 100, "max": 2000 },
+      "depth": 20
+    },
+    "finish": "metal",
+    "category": "panel"
+  },
+  {
+    "partId": "PANEL-BOTTOM-WOOD",
+    "description": "Bottom Panel - Wood Finish",
+    "dimensions": {
+      "width": { "min": 100, "max": 2000 },
+      "height": { "min": 100, "max": 2000 },
+      "depth": 20
+    },
+    "finish": "wood",
+    "category": "panel"
+  },
+  {
+    "partId": "PANEL-SIDE-WIDTH-METAL",
+    "description": "Side Panel (Width) - Metal Finish",
+    "dimensions": {
+      "width": { "min": 50, "max": 2000 },
+      "height": { "min": 50, "max": 2000 },
+      "depth": 20
+    },
+    "finish": "metal",
+    "category": "panel"
+  },
+  {
+    "partId": "PANEL-SIDE-WIDTH-WOOD",
+    "description": "Side Panel (Width) - Wood Finish",
+    "dimensions": {
+      "width": { "min": 50, "max": 2000 },
+      "height": { "min": 50, "max": 2000 },
+      "depth": 20
+    },
+    "finish": "wood",
+    "category": "panel"
+  },
+  {
+    "partId": "PANEL-SIDE-HEIGHT-METAL",
+    "description": "Side Panel (Height) - Metal Finish",
+    "dimensions": {
+      "width": { "min": 50, "max": 2000 },
+      "height": { "min": 50, "max": 2000 },
+      "depth": 20
+    },
+    "finish": "metal",
+    "category": "panel"
+  },
+  {
+    "partId": "PANEL-SIDE-HEIGHT-WOOD",
+    "description": "Side Panel (Height) - Wood Finish",
+    "dimensions": {
+      "width": { "min": 50, "max": 2000 },
+      "height": { "min": 50, "max": 2000 },
+      "depth": 20
+    },
+    "finish": "wood",
+    "category": "panel"
+  },
+  {
+    "partId": "EDGE-HORIZONTAL-METAL",
+    "description": "Horizontal Edge - Metal Finish",
+    "dimensions": {
+      "width": { "min": 50, "max": 2000 },
+      "height": 10,
+      "depth": 20
+    },
+    "finish": "metal",
+    "category": "edge"
+  },
+  {
+    "partId": "EDGE-HORIZONTAL-WOOD",
+    "description": "Horizontal Edge - Wood Finish",
+    "dimensions": {
+      "width": { "min": 50, "max": 2000 },
+      "height": 10,
+      "depth": 20
+    },
+    "finish": "wood",
+    "category": "edge"
+  },
+  {
+    "partId": "EDGE-VERTICAL-METAL",
+    "description": "Vertical Edge - Metal Finish",
+    "dimensions": {
+      "width": 10,
+      "height": { "min": 50, "max": 2000 },
+      "depth": 20
+    },
+    "finish": "metal",
+    "category": "edge"
+  },
+  {
+    "partId": "EDGE-VERTICAL-WOOD",
+    "description": "Vertical Edge - Wood Finish",
+    "dimensions": {
+      "width": 10,
+      "height": { "min": 50, "max": 2000 },
+      "depth": 20
+    },
+    "finish": "wood",
+    "category": "edge"
+  },
+  {
+    "partId": "CONNECTOR-CORNER-METAL",
+    "description": "Corner Connector - Metal Finish",
+    "dimensions": {
+      "width": 30,
+      "height": 30,
+      "depth": 30
+    },
+    "finish": "metal",
+    "category": "connector"
+  },
+  {
+    "partId": "CONNECTOR-CORNER-WOOD",
+    "description": "Corner Connector - Wood Finish",
+    "dimensions": {
+      "width": 30,
+      "height": 30,
+      "depth": 30
+    },
+    "finish": "wood",
+    "category": "connector"
+  },
+  {
+    "partId": "HARDWARE-SCREW-METAL",
+    "description": "Screw - Metal",
+    "dimensions": {
+      "width": 5,
+      "height": 20,
+      "depth": 5
+    },
+    "finish": "metal",
+    "category": "hardware"
+  },
+  {
+    "partId": "HARDWARE-SCREW-WOOD",
+    "description": "Screw - Wood",
+    "dimensions": {
+      "width": 5,
+      "height": 20,
+      "depth": 5
+    },
+    "finish": "wood",
+    "category": "hardware"
+  }
+]
+
