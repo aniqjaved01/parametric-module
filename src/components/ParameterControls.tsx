@@ -1,21 +1,78 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useModule } from '../context/ModuleContext';
 
 export function ParameterControls() {
   const { params, updateParams } = useModule();
+  const [widthInput, setWidthInput] = useState<string>(params.width.toString());
+  const [heightInput, setHeightInput] = useState<string>(params.height.toString());
+  const [widthError, setWidthError] = useState<string>('');
+  const [heightError, setHeightError] = useState<string>('');
+
+  // Sync local state when params change externally
+  useEffect(() => {
+    setWidthInput(params.width.toString());
+  }, [params.width]);
+
+  useEffect(() => {
+    setHeightInput(params.height.toString());
+  }, [params.height]);
 
   const handleWidthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseFloat(e.target.value);
-    if (!isNaN(value) && value > 0) {
-      updateParams({ width: value });
+    const inputValue = e.target.value;
+    setWidthInput(inputValue);
+
+    // Allow empty input
+    if (inputValue === '' || inputValue === '-') {
+      setWidthError('');
+      return;
     }
+
+    const value = parseFloat(inputValue);
+    
+    // Check if it's a valid number
+    if (isNaN(value)) {
+      setWidthError('Please enter a valid number');
+      return;
+    }
+
+    // Validate minimum value
+    if (value <= 5) {
+      setWidthError('Value must be greater than 5');
+      return;
+    }
+
+    // Valid value - update params and clear error
+    setWidthError('');
+    updateParams({ width: value });
   };
 
   const handleHeightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseFloat(e.target.value);
-    if (!isNaN(value) && value > 0) {
-      updateParams({ height: value });
+    const inputValue = e.target.value;
+    setHeightInput(inputValue);
+
+    // Allow empty input
+    if (inputValue === '' || inputValue === '-') {
+      setHeightError('');
+      return;
     }
+
+    const value = parseFloat(inputValue);
+    
+    // Check if it's a valid number
+    if (isNaN(value)) {
+      setHeightError('Please enter a valid number');
+      return;
+    }
+
+    // Validate minimum value
+    if (value <= 5) {
+      setHeightError('Value must be greater than 5');
+      return;
+    }
+
+    // Valid value - update params and clear error
+    setHeightError('');
+    updateParams({ height: value });
   };
 
   const handleFinishChange = (finish: 'metal' | 'wood') => {
@@ -62,17 +119,22 @@ export function ParameterControls() {
         <div style={{ position: 'relative' }}>
           <input
             id="width"
-            type="number"
-            min="100"
-            max="2000"
-            step="10"
-            value={params.width}
+            type="text"
+            inputMode="decimal"
+            value={widthInput}
             onChange={handleWidthChange}
+            onBlur={() => {
+              // On blur, if empty or invalid, reset to current valid value
+              if (widthInput === '' || widthError) {
+                setWidthInput(params.width.toString());
+                setWidthError('');
+              }
+            }}
             style={{
               width: '100%',
               padding: '14px 16px',
               fontSize: '16px',
-              border: '2px solid #e5e7eb',
+              border: `2px solid ${widthError ? '#ef4444' : '#e5e7eb'}`,
               borderRadius: '10px',
               boxSizing: 'border-box',
               backgroundColor: '#fafafa',
@@ -81,6 +143,16 @@ export function ParameterControls() {
               fontWeight: 500,
             }}
           />
+          {widthError && (
+            <div style={{
+              marginTop: '6px',
+              fontSize: '12px',
+              color: '#ef4444',
+              fontWeight: 500,
+            }}>
+              {widthError}
+            </div>
+          )}
         </div>
       </div>
 
@@ -99,27 +171,44 @@ export function ParameterControls() {
         >
           Height (mm)
         </label>
-        <input
-          id="height"
-          type="number"
-          min="100"
-          max="2000"
-          step="10"
-          value={params.height}
-          onChange={handleHeightChange}
-          style={{
-            width: '100%',
-            padding: '14px 16px',
-            fontSize: '16px',
-            border: '2px solid #e5e7eb',
-            borderRadius: '10px',
-            boxSizing: 'border-box',
-            backgroundColor: '#fafafa',
-            color: '#1a1a1a',
-            transition: 'all 0.2s ease',
-            fontWeight: 500,
-          }}
-        />
+        <div style={{ position: 'relative' }}>
+          <input
+            id="height"
+            type="text"
+            inputMode="decimal"
+            value={heightInput}
+            onChange={handleHeightChange}
+            onBlur={() => {
+              // On blur, if empty or invalid, reset to current valid value
+              if (heightInput === '' || heightError) {
+                setHeightInput(params.height.toString());
+                setHeightError('');
+              }
+            }}
+            style={{
+              width: '100%',
+              padding: '14px 16px',
+              fontSize: '16px',
+              border: `2px solid ${heightError ? '#ef4444' : '#e5e7eb'}`,
+              borderRadius: '10px',
+              boxSizing: 'border-box',
+              backgroundColor: '#fafafa',
+              color: '#1a1a1a',
+              transition: 'all 0.2s ease',
+              fontWeight: 500,
+            }}
+          />
+          {heightError && (
+            <div style={{
+              marginTop: '6px',
+              fontSize: '12px',
+              color: '#ef4444',
+              fontWeight: 500,
+            }}>
+              {heightError}
+            </div>
+          )}
+        </div>
       </div>
 
       <div style={{ marginBottom: '32px' }}>
